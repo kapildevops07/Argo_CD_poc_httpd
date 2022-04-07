@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: apachepoc
+  namespace: argocd
+spec:
+  project: apache-project
+  source:
+    repoURL: https://github.com/kapildevops07/Argo_CD_poc_httpd.git
+    targetRevision: HEAD
+    path: helm-apache
+    helm:
+      valueFiles:
+        - ./values.yaml
+      releaseName: apachepoc-helm-release
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default

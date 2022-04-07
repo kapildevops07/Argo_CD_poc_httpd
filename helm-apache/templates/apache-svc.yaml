@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: apache-svc
+  labels:
+    app: apache-svc
+spec:
+  type: LoadBalancer
+  ports:
+  - port: {{ .Values.backstage_port.reverse_port }}
+    targetPort: {{ .Values.backstage_port.http }}
+  selector:
+    app: apache-deploy

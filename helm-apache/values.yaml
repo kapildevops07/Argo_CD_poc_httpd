@@ -1,0 +1,8 @@
+backstage_image:
+  repository: httpd
+  tag: 'latest'
+backstage_port:
+  http: 80
+  reverse_port: 4000
+backstage_replica:
+  count: '2'

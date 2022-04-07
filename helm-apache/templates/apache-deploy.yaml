@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apache-deploy
+  labels:
+    app: apache-deploy
+spec:
+  selector:
+    matchLabels:
+      app: apache
+  replicas: {{ .Values.backstage_replica.count }}
+  template:
+    metadata:
+      labels:
+        app: apache
+    spec:
+      containers:
+      - name: apache-container
+        image: {{ .Values.backstage_image.repository }}:{{ .Values.backstage_image.tag }}
+        ports:
+          - containerPort: 80
