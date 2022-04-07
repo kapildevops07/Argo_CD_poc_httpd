@@ -4,7 +4,7 @@ metadata:
   name: apachepoc
   namespace: argocd
 spec:
-  project: apache-project
+  project: apachepoc-project
   source:
     repoURL: https://github.com/kapildevops07/Argo_CD_poc_httpd.git
     targetRevision: HEAD
