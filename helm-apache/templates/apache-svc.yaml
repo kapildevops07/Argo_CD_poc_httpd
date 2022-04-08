@@ -5,7 +5,7 @@ metadata:
   labels:
     app: apache-svc
 spec:
-  type: LoadBalancer
+  #type: LoadBalancer
   ports:
   - port: {{ .Values.backstage_port.reverse_port }}
     targetPort: {{ .Values.backstage_port.http }}
